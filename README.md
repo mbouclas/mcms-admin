@@ -1,5 +1,6 @@
 # Admin
-
+This is the admin package for Mcms. It's build on Angular material but
+you can go ahead and use any framework you like.
 
 
 ## Install
