@@ -133,11 +133,14 @@
             </md-input-container>
         </div>
     </div>
+<div ng-if="field.type=='boolean'">
 
-    <md-switch aria-label="{{ field.label[VM.defaultLang] || field.label }}" ng-if="field.type=='boolean'"
+    <md-switch aria-label="{{ field.label[VM.defaultLang] || field.label }}"
                ng-model="VM.models[field.varName]" ng-change="VM.changed(field.varName)">
         {{ field.label[VM.defaultLang] || field.label }}
     </md-switch>
+
+</div>
 
     <md-input-container class="md-block" flex flex-gt-sm ng-if="field.type=='select'">
 

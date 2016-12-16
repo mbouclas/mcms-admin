@@ -172,7 +172,7 @@ class MenuItemController extends Controller
     {
         $menu = $request->all();
 
-        $this->menu->menuItemModel->rebuildTree($menu['items']);
+        $this->menu->menuItemModel->scoped([ 'menu_id' => $request->input('id') ])->rebuildTree($menu['items']);
         return $this->menu->menuWithItems($menu['id']);
     }
 }

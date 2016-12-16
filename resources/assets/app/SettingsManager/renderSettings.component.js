@@ -148,6 +148,12 @@
                     }
                 }
 
+                if (field.type == 'boolean') {
+                    if (lo.isNumber(ngModel[field.varName])) {
+                        ngModel[field.varName] = (ngModel[field.varName] === 1) ? true : false;
+                    }
+                }
+
                 vm.models[field.varName] = ngModel[field.varName];
             });
 
