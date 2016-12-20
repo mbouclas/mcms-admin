@@ -63,7 +63,7 @@ class AuthController extends Controller
             return response(['error' => 'errors.login.failed'], 403);
         }
 
-        if ( ! $user->hasRole(['admin','su']) && ! $user->hasRole(\Config::get('admin.adminRoles'))) {
+        if ( ! $user->hasRole(['admin','su', 'god']) && ! $user->hasRole(\Config::get('admin.adminRoles'))) {
             Auth::logout();
             return response(['error' => 'errors.login.notAuthorizedResource'], 403);
         }
