@@ -4,9 +4,9 @@
     angular.module('mcms.user')
         .directive('latestUsersWidget', Component);
 
-    Component.$inject = ['configuration', 'PageService'];
+    Component.$inject = ['configuration'];
 
-    function Component(Config, Page){
+    function Component(Config){
 
         return {
             templateUrl: Config.templatesDir + "User/Widgets/latestUsers.widget.html",

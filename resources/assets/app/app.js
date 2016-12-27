@@ -50,7 +50,7 @@
         $compileProvider.debugInfoEnabled(true);
         $locationProvider.html5Mode(false);
         $routeProvider.otherwise('/');
-
+        $locationProvider.hashPrefix('');
         var moment = require('moment');
 
         $mdDateLocaleProvider.formatDate = function(date) {
