@@ -8,7 +8,7 @@ you can go ahead and use any framework you like.
 Via Composer
 
 ``` bash
-$ composer require Mcms/Admin
+$ composer require mcms/package-admin
 ```
 
 ## Usage
