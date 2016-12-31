@@ -65,16 +65,17 @@
             }
 
             if (lo.isArray($scope.options.allow)){
-                var allwoedConnectors = [];
+                var allowedConnectors = [];
                 lo.forEach($scope.options.allow, function (connector) {
                     var found = lo.find(vm.Connectors, {name : connector});
+
                     if (found){
-                        allwoedConnectors.push(found);
+                        allowedConnectors.push(found);
                     }
                 });
 
-                if (allwoedConnectors.length > 0){
-                    vm.Connectors = allwoedConnectors;
+                if (allowedConnectors.length > 0){
+                    vm.Connectors = allowedConnectors;
                 }
             }
 
