@@ -104,7 +104,7 @@
                             value = {};
                             break;
                         case 'itemSelector' :
-                            value = (typeof field.config != 'undefined' && field.config.multiple) ? [] : {};
+                            value = (typeof field.config !== 'undefined' && field.config.multiple) ? [] : {};
                             break;
                         default :
                             value = (field.translatable) ? Lang.langFields() : '';
@@ -112,14 +112,14 @@
 
                     ngModel[field.varName] = value;
 
-                    if (field.type == 'select') {
+                    if (field.type === 'select') {
                         var defaultValue = lo.find(field.options, {default: true});
                         if (defaultValue) {
                             ngModel[field.varName] = defaultValue.value;
                         }
                     }
 
-                    if (field.type == 'text') {
+                    if (field.type === 'text') {
                         if (!field.translatable) {
                             ngModel[field.varName] = field.default;
                         }
@@ -132,23 +132,31 @@
 
                 }
 
-                if (field.type == 'date' && typeof ngModel[field.varName] == 'string') {
+                if (field.type === 'date' && typeof ngModel[field.varName] === 'string') {
                     ngModel[field.varName] = moment(ngModel[field.varName]).toDate();
                 }
 
-                if (field.type == 'itemSelector') {
+                if (field.type === 'itemSelector') {
                     if (!field.config.multiple && lo.isArray(ngModel[field.varName])) {
                         ngModel[field.varName] = {};//fixes the fact tha php converts empty object to []
                     }
                 }
 
-                if (field.type == 'file' || field.type == 'image') {
-                    if (typeof ngModel[field.varName] == 'undefined' || lo.isArray(ngModel[field.varName])){
+                if (field.type === 'file' || field.type === 'image') {
+                    if (field.type === 'image' && lo.isObject(field.settings)) {
+                        field.settings = angular.extend(vm.imageOptions, field.settings);
+                    }
+
+                    if (field.type === 'file' && lo.isObject(field.settings)) {
+                        field.settings = angular.extend(vm.fileOptions, field.settings);
+                    }
+
+                    if (typeof ngModel[field.varName] === 'undefined' || lo.isArray(ngModel[field.varName])){
                         ngModel[field.varName] = {};
                     }
                 }
 
-                if (field.type == 'boolean') {
+                if (field.type === 'boolean') {
                     if (lo.isNumber(ngModel[field.varName])) {
                         ngModel[field.varName] = (ngModel[field.varName] === 1) ? true : false;
                     }
