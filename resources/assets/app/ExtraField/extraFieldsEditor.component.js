@@ -48,7 +48,12 @@
             vm.Model = model;
             ExtraFieldService.get({model : model})
                 .then(function (response) {
-                    vm.Fields = response;
+                    vm.Fields = response.fields;
+                    //response.customizations is coming from config (e.g pages.items.extraFields)
+                    if (!lo.isArray($scope.additionalFields)){
+                        $scope.additionalFields = [];
+                    }
+                    $scope.additionalFields = $scope.additionalFields.concat(response.customizations);
                 });
         }
 

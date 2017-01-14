@@ -36,7 +36,9 @@
             return DS.index(filters)
                 .then(function (response) {
                     //the fields are in php format, convert them to the expected one
-                    return convertFieldsFromMysql(response);
+                    response.fields = convertFieldsFromMysql(response.fields);
+
+                    return response;
                 });
         }
 
