@@ -107,8 +107,23 @@
     <md-switch aria-label="{{ name }}"
                ng-change="VM.checkUnique(field, name, arrayOfItems)"
                ng-model="field.value">
-        {{ name }}
+        {{ field.label }}
     </md-switch>
+</script>
+
+<script type="text/ng-template" id="image">
+    <label>{{ field.label[VM.defaultLang] || field.label }}</label>
+    <image-component ng-model="field.value" layout-type="column"
+                     name="{{ name }}"
+                     settings="field.settings"
+                     options="VM.imageOptions" ></image-component>
+</script>
+
+<script type="text/ng-template" id="file">
+    <label>{{ field.label[VM.defaultLang] || field.label }}</label>
+    <file-component ng-model="field.value" layout-type="column"
+                    name="{{ name }}"
+                    options="VM.fileOptions" ></file-component>
 </script>
 
 <script type="text/ng-template" id="array">
@@ -145,3 +160,5 @@
     </md-list>
 
 </script>
+
+

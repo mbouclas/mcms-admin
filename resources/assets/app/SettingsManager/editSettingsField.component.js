@@ -41,6 +41,15 @@
         vm.defaultLang = Lang.defaultLang();
         vm.Locales = Lang.locales();
 
+        vm.imageOptions = {
+            showPreview: false,
+            showDetails: false,
+            showUpload: true
+        };
+        vm.fileOptions = {
+            passThrough : true,
+        };
+
         vm.init = function (model) {
             vm.Model = model;
         }
