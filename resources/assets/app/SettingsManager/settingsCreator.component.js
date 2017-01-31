@@ -3,7 +3,8 @@
         .directive('settingsCreator', Directive);
 
     Directive.$inject = ['configuration', 'lodashFactory'];
-    DirectiveController.$inject = ['$scope', 'mcms.settingsManagerService', 'lodashFactory','LangService'];
+    DirectiveController.$inject = ['$scope', 'mcms.settingsManagerService',
+        'lodashFactory','LangService', 'Dialog'];
 
     function Directive(Config, lo) {
 
@@ -39,7 +40,7 @@
         };
     }
 
-    function DirectiveController($scope, Settings, lo, Lang) {
+    function DirectiveController($scope, Settings, lo, Lang, Dialog) {
         var vm = this,
             nowEditing = null,
             OriginalModel = [];
@@ -69,19 +70,39 @@
 
             OriginalModel = angular.copy(vm.Model);
         }
-
+        vm.NewModel = Settings.addField(vm.newField);
+        vm.NewModel.isNew = true;
         vm.add = function () {
-            vm.showAdd = true;
-            vm.NewModel = Settings.addField(vm.newField);
-            vm.NewModel.isNew = true;
+            //open modal
+            Dialog.show({
+                title : 'New Field',
+                contents : '<edit-settings-field ' +
+                'ng-model="VM.field" on-save="VM.onSave(field)"></edit-settings-field>',
+                locals : {
+                    field :Settings.addField(vm.newField),
+                    onSave : vm.onSave
+                }
+            });
+
         };
 
         vm.edit = function (model, $index) {
+            //open modal...
             //reverse the model
-            vm.showAdd = true;
             vm.NewModel = Settings.reverseFieldToEditable(model);
             vm.NewModel.isNew = false;
             nowEditing = $index;//keep the index to replace on save as we get a different model
+
+            Dialog.show({
+                title : 'New Field',
+                contents : '<edit-settings-field ' +
+                'ng-model="VM.field" on-save="VM.onSave(field)"></edit-settings-field>',
+                locals : {
+                    field : vm.NewModel,
+                    onSave : vm.onSave
+                }
+            });
+
         }
 
         vm.onSave = function (field) {
@@ -121,6 +142,7 @@
             nowEditing = null;//reset
             editedModel = {};
             vm.showAdd = false;
+            Dialog.close();
         };
 
         vm.delete = function ($index) {
