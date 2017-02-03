@@ -94,7 +94,7 @@
             nowEditing = $index;//keep the index to replace on save as we get a different model
 
             Dialog.show({
-                title : 'New Field',
+                title : 'Edit ' + model.label[vm.defaultLang],
                 contents : '<edit-settings-field ' +
                 'ng-model="VM.field" on-save="VM.onSave(field)"></edit-settings-field>',
                 locals : {
@@ -107,7 +107,6 @@
 
         vm.onSave = function (field) {
             var editedModel;
-
             if (field.isNew) {
                 var newModel = Settings.convertFieldToSchema(field.params, field.type);
 

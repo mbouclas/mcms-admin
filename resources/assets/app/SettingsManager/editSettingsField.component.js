@@ -86,5 +86,10 @@
         vm.isObject= function(item){
             return lo.isObject(item);
         };
+
+        vm.uploadDone = function (field, value, passThrough) {
+            passThrough.value = value;
+            vm.checkUnique(passThrough, passThrough.varName);
+        };
     }
 })();

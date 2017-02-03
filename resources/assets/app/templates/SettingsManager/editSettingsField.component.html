@@ -23,7 +23,7 @@
 
 <script type="text/ng-template" id="text">
     <md-input-container class="md-block" flex flex-gt-sm ng-if="!VM.isObject(field.value)">
-        <label>{{ name }}</label>
+        <label>{{ field.label || name }}</label>
         <input ng-model="field.value" ng-required="field.required" name="{{ field.randomId }}"
                to-slug="VM.Model.params[field.toSlug].value">
 
@@ -35,7 +35,7 @@
                         ng-repeat="(key, locale) in VM.Locales"
                         ng-if="VM.isObject(field.value)">.
 
-        <label>{{ name }} in {{ locale.name }}</label>
+        <label>{{ field.label || name }} in {{ locale.name }}</label>
         <input ng-model="field.value[key]" ng-required="field.required" name="{{ field.randomId }}"
                to-slug="VM.Model.params[field.toSlug].value">
 
@@ -47,7 +47,7 @@
 
 <script type="text/ng-template" id="url">
     <md-input-container class="md-block" flex flex-gt-sm>
-        <label>{{ name }}</label>
+        <label>{{ field.label || name }}</label>
         <input ng-model="field.value" ng-required="field.required" name="{{ field.randomId }}"
                to-slug="VM.Model.params[field.toSlug].value" type="text">
 
@@ -59,7 +59,7 @@
 
 <script type="text/ng-template" id="email">
     <md-input-container class="md-block" flex flex-gt-sm>
-        <label>{{ name }} </label>
+        <label>{{ field.label || name }} </label>
         <input type="email" ng-model="field.value" ng-required="field.required" name="{{ field.randomId }}"
                to-slug="VM.Model.params[field.toSlug].value">
 
@@ -71,7 +71,7 @@
 
 <script type="text/ng-template" id="number">
     <md-input-container class="md-block" flex flex-gt-sm>
-        <label>{{ name }}</label>
+        <label>{{ field.label || name }}</label>
         <input type="number" step="1" min="0" ng-model="field.value" name="{{ field.randomId }}">
         <div ng-messages="ItemForm[name].$error" ng-if="field.required">
             <ng-messages-include src="{{ VM.ValidationMessagesTemplate }}"></ng-messages-include>
@@ -80,9 +80,9 @@
 </script>
 
 <script type="text/ng-template" id="select">
-    <label>{{ name }}</label>
+    <label>{{ field.label || name }}</label>
 
-    <md-select aria-label="{{ name }}" placeholder="{{ name }}"
+    <md-select aria-label="{{ field.label || name }}" placeholder="{{ field.label || name }}"
                ng-model="field.value">
         <md-option value="{{ option.value }}" ng-repeat="option in field.options">{{ option.label }}</md-option>
     </md-select>
@@ -92,9 +92,9 @@
 </script>
 
 <script type="text/ng-template" id="selectMultiple">
-    <label>{{ name }}</label>
+    <label>{{ field.label || name }}</label>
 
-    <md-select aria-label="{{ name }}" placeholder="{{ name }}"
+    <md-select aria-label="{{ field.label || name }}" placeholder="{{ field.label || name }}"
                ng-model="field.value" multiple="">
         <md-option value="{{ option.value }}" ng-repeat="option in field.options">{{ option.label }}</md-option>
     </md-select>
@@ -104,25 +104,29 @@
 </script>
 
 <script type="text/ng-template" id="boolean">
-    <md-switch aria-label="{{ name }}"
+    <md-switch aria-label="{{ field.label || name }}"
                ng-change="VM.checkUnique(field, name, arrayOfItems)"
                ng-model="field.value">
-        {{ field.label }}
+        {{ field.label || name }}
     </md-switch>
 </script>
 
 <script type="text/ng-template" id="image">
     <label>{{ field.label[VM.defaultLang] || field.label }}</label>
     <image-component ng-model="field.value" layout-type="column"
-                     name="{{ name }}"
+                     name="{{ field.label || name }}"
                      settings="field.settings"
+                     pass-through="field"
+                     on-change="VM.uploadDone(field, value, passThrough)"
                      options="VM.imageOptions" ></image-component>
 </script>
 
 <script type="text/ng-template" id="file">
     <label>{{ field.label[VM.defaultLang] || field.label }}</label>
     <file-component ng-model="field.value" layout-type="column"
-                    name="{{ name }}"
+                    name="{{ field.label || name }}"
+                    pass-through="field"
+                    on-change="VM.uploadDone(field, value, passThrough)"
                     options="VM.fileOptions" ></file-component>
 </script>
 

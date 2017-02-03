@@ -41,9 +41,6 @@
 
 </md-toolbar>
 
-<edit-settings-field ng-model="VM.NewModel" on-save="VM.onSave(field)" ng-if="VM.showAdd"></edit-settings-field>
-
-
 <md-list sv-root sv-part="VM.Model"
          sv-on-sort="VM.onSort($item, $partFrom, $partTo, $indexFrom, $indexTo)">
     <md-list-item

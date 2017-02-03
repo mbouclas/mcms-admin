@@ -17,7 +17,8 @@
                 options: '=?options',
                 uploadSettings: '=?uploadSettings',
                 onSelect: '&onSelect',
-                onChange: '&?onChange'
+                onChange: '&?onChange',
+                passThrough : '=?passThrough',
             },
             restrict: 'E',
             link: function (scope, element, attrs, controllers) {
@@ -62,13 +63,14 @@
                 scope.callbacks = {
                     success : function (file, xhr) {
                         scope.Item.src = (xhr.copies) ? xhr.copies.originals.imageUrl : xhr.data.url;
+                        scope.itemChange();
                         $rootScope.$broadcast('uploader.files.remove', file);
                     }
                 };
 
                 scope.itemChange = function () {
                     if (typeof scope.onChange == 'function'){
-                        scope.onChange({field: attrs.name || 'image', value: scope.Item});
+                        scope.onChange({field: attrs.name || 'image', value: scope.Item, passThrough : scope.passThrough});
 
                     }
                 };

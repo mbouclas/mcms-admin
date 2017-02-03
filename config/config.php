@@ -11,30 +11,37 @@ return [
                     'type' => 'text',
                     'required' => true,
                     'toSlug' => 'varName',
-                    'multilingual' => true
+                    'multilingual' => true,
+                    'label' => 'Label',
                 ],
                 'varName' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Field name (no spaces)'
                 ],
                 'placeholder' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Field placeholder'
                 ],
                 'description' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Description'
                 ],
                 'default' => [
                     'type' => 'text',
+                    'label' => 'Default value'
                 ],
                 'required' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Required?'
                 ],
                 'translatable' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Translatable'
                 ],
             ]
         ],
@@ -46,7 +53,8 @@ return [
                     'type' => 'text',
                     'required' => true,
                     'toSlug' => 'varName',
-                    'multilingual' => true
+                    'multilingual' => true,
+                    'label' => 'Label',
                 ],
                 'varName' => [
                     'type' => 'text',
@@ -55,17 +63,21 @@ return [
                 'placeholder' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Field placeholder'
                 ],
                 'description' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Description'
                 ],
                 'default' => [
                     'type' => 'text',
+                    'label' => 'Default value'
                 ],
                 'required' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Required?'
                 ],
             ]
         ],
@@ -77,23 +89,28 @@ return [
                     'type' => 'text',
                     'required' => true,
                     'toSlug' => 'varName',
-                    'multilingual' => true
+                    'multilingual' => true,
+                    'label' => 'Label',
                 ],
                 'varName' => [
                     'type' => 'text',
-                    'required' => true
+                    'required' => true,
+                    'label' => 'Field name (no spaces)'
                 ],
                 'placeholder' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Field placeholder'
                 ],
                 'description' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Description'
                 ],
                 'required' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Required?'
                 ],
             ]
         ],
@@ -105,42 +122,51 @@ return [
                     'type' => 'text',
                     'required' => true,
                     'toSlug' => 'varName',
-                    'multilingual' => true
+                    'multilingual' => true,
+                    'label' => 'Label',
                 ],
                 'varName' => [
                     'type' => 'text',
-                    'required' => true
+                    'required' => true,
+                    'label' => 'Field name (no spaces)'
                 ],
                 'placeholder' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Field placeholder'
                 ],
                 'description' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Description'
                 ],
                 'default' => [
                     'type' => 'text',
                     'required' => true,
-                    'value' => 0
+                    'value' => 0,
+                    'label' => 'Default value'
                 ],
                 'required' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Required?'
                 ],
                 'step' => [
                     'type' => 'number',
                     'required' => false,
-                    'value' => 1
+                    'value' => 1,
+                    'label' => 'Step by'
                 ],
                 'min' => [
                     'type' => 'number',
                     'required' => false,
-                    'value' => 0
+                    'value' => 0,
+                    'label' => 'Minimum value'
                 ],
                 'max' => [
                     'type' => 'number',
-                    'required' => false
+                    'required' => false,
+                    'label' => 'Maximum value'
                 ],
             ]
         ],
@@ -152,19 +178,23 @@ return [
                     'type' => 'text',
                     'required' => true,
                     'toSlug' => 'varName',
-                    'multilingual' => true
+                    'multilingual' => true,
+                    'label' => 'Label',
                 ],
                 'varName' => [
                     'type' => 'text',
-                    'required' => true
+                    'required' => true,
+                    'label' => 'Field name (no spaces)'
                 ],
                 'description' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Description'
                 ],
                 'required' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Required?'
                 ],
             ]
         ],
@@ -176,19 +206,23 @@ return [
                     'type' => 'text',
                     'required' => true,
                     'toSlug' => 'varName',
-                    'multilingual' => true
+                    'multilingual' => true,
+                    'label' => 'Label',
                 ],
                 'varName' => [
                     'type' => 'text',
-                    'required' => true
+                    'required' => true,
+                    'label' => 'Field name (no spaces)'
                 ],
                 'description' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Description'
                 ],
                 'required' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Required?'
                 ],
             ]
         ],
@@ -200,30 +234,37 @@ return [
                     'type' => 'text',
                     'required' => true,
                     'toSlug' => 'varName',
-                    'multilingual' => true
+                    'multilingual' => true,
+                    'label' => 'Label',
                 ],
                 'varName' => [
                     'type' => 'text',
-                    'required' => true
+                    'required' => true,
+                    'label' => 'Field name (no spaces)'
                 ],
                 'placeholder' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Field placeholder'
                 ],
                 'description' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Description'
                 ],
                 'default' => [
                     'type' => 'text',
+                    'label' => 'Default value'
                 ],
                 'required' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Required?'
                 ],
                 'translatable' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Translatable'
                 ],
             ]
         ],
@@ -235,26 +276,32 @@ return [
                     'type' => 'text',
                     'required' => true,
                     'toSlug' => 'varName',
-                    'multilingual' => true
+                    'multilingual' => true,
+                    'label' => 'Label',
                 ],
                 'varName' => [
                     'type' => 'text',
-                    'required' => true
+                    'required' => true,
+                    'label' => 'Field name (no spaces)'
                 ],
                 'placeholder' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Field placeholder'
                 ],
                 'description' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Description'
                 ],
                 'default' => [
                     'type' => 'text',
+                    'label' => 'Default value'
                 ],
-                'required' => [
-                    'type' => 'boolean',
-                    'value' => false
+                "required" => [
+                    "type" => "boolean",
+                    "label" => "Required field",
+                    "value" => FALSE
                 ],
                 'translatable' => [
                     'type' => 'boolean',
@@ -270,38 +317,46 @@ return [
                     'type' => 'text',
                     'required' => true,
                     'toSlug' => 'varName',
-                    'multilingual' => true
+                    'multilingual' => true,
+                    'label' => 'Label',
                 ],
                 'varName' => [
                     'type' => 'text',
-                    'required' => true
+                    'required' => true,
+                    'label' => 'Field name (no spaces)'
                 ],
                 'placeholder' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Field placeholder'
                 ],
                 'description' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Description'
                 ],
                 'required' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Required?'
                 ],
                 'options' => [
                     'params' => [
                         "default" => [
                             'type' => 'boolean',
-                            'unique' => true
+                            'unique' => true,
+                            'label' => 'Default value'
                         ],
                         "label" => [
                             'type' => 'text',
                             'required' => true,
-                            'multilingual' => true
+                            'multilingual' => true,
+                            'label' => 'Label'
                         ],
                         "value" => [
                             'type' => 'text',
                             'required' => true,
+                            'label' => 'Value'
                         ]
                     ]
                 ]
@@ -315,39 +370,46 @@ return [
                     'type' => 'text',
                     'required' => true,
                     'toSlug' => 'varName',
-                    'multilingual' => true
+                    'multilingual' => true,
+                    'label' => 'Label',
                 ],
                 'varName' => [
                     'type' => 'text',
-                    'required' => true
+                    'required' => true,
+                    'label' => 'Field name (no spaces)'
                 ],
                 'placeholder' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Field placeholder'
                 ],
                 'description' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Description'
                 ],
                 'required' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Required?'
                 ],
                 'options' => [
                     'params' => [
                         "default" => [
                             'type' => 'boolean',
-                            'unique' => true
+                            'unique' => true,
+                            'label' => 'Default value'
                         ],
                         "label" => [
                             'type' => 'text',
                             'required' => true,
-                            'multilingual' => true
+                            'multilingual' => true,
+                            'label' => 'Label'
                         ],
                         "value" => [
                             'type' => 'text',
                             'required' => true,
-                            'multilingual' => true
+                            'label' => 'Value'
                         ]
                     ]
                 ]
@@ -359,25 +421,30 @@ return [
             'params' => [
                 'varName' => [
                     'type' => 'text',
-                    'required' => true
+                    'required' => true,
+                    'label' => 'Field name (no spaces)'
                 ],
                 'label' => [
                     'type' => 'text',
                     'required' => true,
                     'toSlug' => 'varName',
-                    'multilingual' => true
+                    'multilingual' => true,
+                    'label' => 'Label',
                 ],
                 'description' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Description'
                 ],
                 'required' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Required?'
                 ],
                 'translatable' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Translatable'
                 ],
             ],
         ],
@@ -389,33 +456,40 @@ return [
                     'type' => 'text',
                     'required' => true,
                     'toSlug' => 'varName',
-                    'multilingual' => true
+                    'multilingual' => true,
+                    'label' => 'Label',
                 ],
                 'varName' => [
                     'type' => 'text',
-                    'required' => true
+                    'required' => true,
+                    'label' => 'Field name (no spaces)'
                 ],
                 'description' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Description'
                 ],
                 'required' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Required?'
                 ],
                 'translatable' => [
                     'type' => 'boolean',
-                    'value' => false
+                    'value' => false,
+                    'label' => 'Translatable'
                 ],
             ],
             'settings' => [
                 'width' => [
                     'type' => 'number',
-                    'required' => false
+                    'required' => false,
+                    'label' => 'Image width',
                 ],
                 'height' => [
                     'type' => 'number',
-                    'required' => false
+                    'required' => false,
+                    'label' => 'Image height',
                 ],
             ]
         ],
@@ -427,29 +501,35 @@ return [
                     'type' => 'text',
                     'required' => true,
                     'toSlug' => 'varName',
-                    'multilingual' => true
+                    'multilingual' => true,
+                    'label' => 'Label',
                 ],
                 'varName' => [
                     'type' => 'text',
                     'required' => true,
+                    'label' => 'Field name (no spaces)'
                 ],
             ],
             'config' => [
                 'multiple' => [
                     'type' => 'boolean',
                     'default' => true,
+                    'label' => 'Allow multiple items',
                 ],
                 'maxItems' => [
                     'type' => 'number',
                     'default' => null,
+                    'label' => 'Max number of items',
                 ],
                 'minItems' => [
                     'type' => 'number',
                     'default' => null,
+                    'label' => 'Min number of items',
                 ],
                 'hasFilters' => [
                     'type' => 'boolean',
                     'default' => true,
+                    'label' => 'Allow filters'
                 ],
             ],
         ],
