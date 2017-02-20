@@ -24,6 +24,7 @@
         'mcms.mediaLibrary',
         'mcms.itemSelector',
         'mcms.extraFields',
+        'mcms.dynamicTables',
     ];
 
     if (typeof window.Injectables != 'undefined'){
@@ -106,3 +107,4 @@ require('./ItemSelector');
 require('./Tags');
 require('./MailLog');
 require('./MediaLibrary');
+require('./DynamicTables');

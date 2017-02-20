@@ -101,7 +101,7 @@
             }
         };
     }
-    
+
     function DirectiveController($scope, lo, $timeout, Lang) {
         var vm = this;
 

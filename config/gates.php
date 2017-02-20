@@ -164,7 +164,15 @@ return [
         'level' => 98,
         'provider' => 'mcms.pages'
     ],
+    [
+        'title' => 'CMS Dynamic fields',
+        'gate' => 'cms.dynamicTables.menu',
+        'level' => 50,
+        'provider' => 'mcms.pages'
+    ],
     /* Notifications */
     /* Events */
     /* Products */
+
+
 ];

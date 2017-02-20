@@ -134,7 +134,7 @@
         </div>
     </div>
 <div ng-if="field.type=='boolean'">
----
+
     <md-switch aria-label="{{ field.label[VM.defaultLang] || field.label }}"
                ng-model="VM.models[field.varName]" ng-change="VM.changed(field.varName)">
         {{ field.label[VM.defaultLang] || field.label }}

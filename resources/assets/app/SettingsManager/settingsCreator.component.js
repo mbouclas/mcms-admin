@@ -70,20 +70,20 @@
 
             OriginalModel = angular.copy(vm.Model);
         }
-        vm.NewModel = Settings.addField(vm.newField);
-        vm.NewModel.isNew = true;
+
         vm.add = function () {
             //open modal
+            vm.NewModel = Settings.addField(vm.newField);
+            vm.NewModel.isNew = true;
             Dialog.show({
                 title : 'New Field',
                 contents : '<edit-settings-field ' +
                 'ng-model="VM.field" on-save="VM.onSave(field)"></edit-settings-field>',
                 locals : {
-                    field :Settings.addField(vm.newField),
+                    field : vm.NewModel,
                     onSave : vm.onSave
                 }
             });
-
         };
 
         vm.edit = function (model, $index) {
@@ -118,6 +118,7 @@
                     newModel.config = Settings.convertFieldToSchema(field.config, field.type);
                 }
                 vm.Model.push(newModel);
+                console.log(vm.Model);
                 editedModel = OriginalModel[vm.Model.length-1];
             }
 
