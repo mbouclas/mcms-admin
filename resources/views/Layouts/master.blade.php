@@ -2,7 +2,7 @@
 <html lang="en" ng-app="mcms" ng-strict-di>
 <head>
     <meta charset="UTF-8">
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{{asset('package-admin/css/angular-material.min.css')}}"
           media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="{{asset('package-admin/css/md-data-table.min.css')}}"

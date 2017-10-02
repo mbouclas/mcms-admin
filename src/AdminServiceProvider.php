@@ -73,6 +73,13 @@ class AdminServiceProvider extends ServiceProvider
                 require __DIR__.'/Http/routes.php';
             });
 
+            $router->group([
+                'prefix' => 'api',
+                'middleware' => ['api', 'jwt.auth'],
+            ], function ($router) {
+                require __DIR__.'/Http/api.php';
+            });
+
             $this->loadViewsFrom(__DIR__ . '/../resources/views', 'admin');
         }
 

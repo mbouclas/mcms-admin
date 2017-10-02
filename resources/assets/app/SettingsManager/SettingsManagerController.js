@@ -11,6 +11,7 @@
 
     function Controller(Init, Config, ACL, Lang, SEO, DS, Helpers, lo) {
         var vm = this;
+
         SEO.init(Init.seoFields);
         vm.ValidationMessagesTemplate = Config.validationMessages;
         vm.Roles = ACL.roles();
@@ -38,8 +39,16 @@
                 default : false,
                 alias : 'html',
                 acl : 'isSu'
-            }
+            },
+/*            {
+                label : 'Marketing',
+                file : Config.templatesDir + 'SettingsManager/tab-marketing.html',
+                active : false,
+                default : false,
+                alias : 'marketing'
+            }*/
         ];
+
         vm.Lang = Lang;
         vm.defaultLang = Lang.defaultLang();
         vm.Locales = Lang.locales();
@@ -53,12 +62,14 @@
         vm.Settings = {
             general : {
                 siteName : Init.core.siteName,
-                seo : Init.core.seo
+                seo : Init.core.seo,
+                marketing: Init.core.marketing
             },
             images : Init.core.images,
             mail : Init.mail,
             redactor : Init.redactor
         };
+
 
         if (typeof vm.Settings.redactor.clips == 'undefined' || !lo.isArray(vm.Settings.redactor.clips)){
             vm.Settings.redactor.clips = [];
