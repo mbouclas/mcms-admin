@@ -23,7 +23,7 @@
                 var defaults = {
                     limit : 50
                 };
-
+                               
                 scope.options = (typeof scope.options == 'undefined' || !scope.options) ? defaults : angular.extend(defaults, scope.options);
 
                 var watcher = scope.$watch('ngModel', function (val) {
@@ -49,6 +49,7 @@
                 // User.get({limit : 10})
             ];
 
+
             //go find this user if it is set as an option
             if ($scope.showCurrentUser){
                 tasks.push(User.find(uid));
@@ -68,7 +69,7 @@
                 return (!query) ? vm.Users : vm.Users.filter( Helpers.createFilterFor('fullName',query) );
             }*/
 
-            return User.get({limit : 10})
+            return User.get(angular.extend({limit : 10, active: true}, $scope.options))
                 .then(function (res) {
                     vm.Users = res.data;
                     return (!query) ? res.data : res.data.filter( Helpers.createFilterFor('fullName',query) );

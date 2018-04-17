@@ -57,6 +57,10 @@ class UserController extends Controller
      */
     public function index(UserFilters $filters,  ExtraFieldFilters $extraFieldFilters)
     {
+/*        \DB::listen(function($sql) {
+            var_dump($sql->sql);
+            var_dump($sql->bindings);
+        });*/
         $results = $this->user
             ->filter($filters, [
                 'unhide' => ['created_at', 'updated_at', 'activated_at', 'active', 'awaits_moderation'],
