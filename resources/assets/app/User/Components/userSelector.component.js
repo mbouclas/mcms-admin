@@ -62,7 +62,6 @@
 
         };
 
-
         vm.getUsers = function (query) {
 
 /*            if (vm.Users.length > 0){
