@@ -68,7 +68,7 @@ class AdminController extends Controller
         $components = (Config::has('admin.components')) ? Config::get('admin.components') : [];
         $js = JsViewBinder::put([
             'user' => (!$user) ? null : $user->toArray(),
-            'userModel' => get_class($user),
+            'userModel' => (!$user) ? '' : get_class($user),
             'currentLocale' => 'en',
             'translations' => ['en' => array_dot(Lang::get('admin'))],
             'locales' => $this->translations->locales(),
