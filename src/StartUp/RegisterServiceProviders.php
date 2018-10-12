@@ -15,7 +15,7 @@ class RegisterServiceProviders
      */
     public function handle()
     {
-        App::register(\Barryvdh\Elfinder\ElfinderServiceProvider::class);
+
         App::register(\Intervention\Image\ImageServiceProvider::class);
     }
 }
