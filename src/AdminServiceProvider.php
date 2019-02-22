@@ -36,7 +36,6 @@ class AdminServiceProvider extends ServiceProvider
 
         $this->publishes([
             __DIR__ . '/../config/config.php' => config_path('admin.php'),
-            __DIR__ . '/../config/elfinder.php' => config_path('elfinder.php'),
             __DIR__ . '/../config/redactor.php' => config_path('redactor.php'),
             __DIR__ . '/../config/media_library.php' => config_path('media_library.php'),
         ], 'config');
