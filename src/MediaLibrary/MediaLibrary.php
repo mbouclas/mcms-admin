@@ -90,8 +90,9 @@ class MediaLibrary
                 'width' => $image->width(),
                 'height' => $image->height(),
                 'name' => $image->basename,
-                'exif' => $image->exif(),
+//                'exif' => $image->exif(),
             ];
+
             $newFile->settings = $settings;
             $newFile->save();
 
