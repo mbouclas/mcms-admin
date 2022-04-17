@@ -152,6 +152,11 @@ class MenuItemController extends Controller
 //        print_r(ItemConnector::connectors());
         //find the connector in the registry
 
+/*        \DB::listen(function($sql) {
+            var_dump($sql->sql);
+            var_dump($sql->bindings);
+        });*/
+
         $section = ItemConnector::findConnector([
             'name' => $request->input('connector')
         ], $request->input('section'))->section;
